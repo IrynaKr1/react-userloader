@@ -3,7 +3,7 @@ function getUsers(option) {
     page: 1,
     results: 10,
     seed: 'pe2022',
-    inc: ['name', 'gender', 'email', 'login'],
+    inc: ['picture', 'name', 'login', 'location', 'cell', 'email'],
   };
 
   const realOptions = {
