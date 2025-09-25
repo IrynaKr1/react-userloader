@@ -1,8 +1,9 @@
 import './App.css';
+import UsersLoader from './components/UsersLoader';
 
 function App() {
 
-  return <></>;
+  return <UsersLoader/>;
 }
 
 export default App;
