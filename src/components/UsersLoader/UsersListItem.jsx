@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../reset.css'; 
+import '../../reset.css';
 import styles from './UsersLoader.module.scss';
 
 function UsersListItem(props) {
@@ -20,20 +20,22 @@ function UsersListItem(props) {
 
   return (
     <li>
-      <div className='mainUserData'>
-        <div className='imageContainer'>
-          <img src={medium} alt={`${first} ${last}`} />
+      <div className={styles.container}>
+        <div className={styles.mainUserData}>
+          <div className={styles.imageContainer}>
+            <img src={medium} alt={`${first} ${last}`} />
+          </div>
+          <h2 className={styles.userName}>
+            {first} {last}
+          </h2>
+          <h3 className={styles.userTitle}>{username}</h3>
         </div>
-        <h2>
-          {first} {last}
-        </h2>
-        <h3>{username}</h3>
-      </div>
-      <div className='adressUserData'>
-        <p>{cell}</p>
-        <p className={styles.userEmail}>{email}</p>
-        <p>{country}</p>
-        <p>{`${number} ${name}, ${city}, ${state}`}</p>
+        <div className='adressUserData'>
+          <p>{cell}</p>
+          <p className={styles.userEmail}>{email}</p>
+          <p>{country}</p>
+          <p>{`${number} ${name}, ${city}, ${state}`}</p>
+        </div>
       </div>
     </li>
   );

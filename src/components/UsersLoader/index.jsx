@@ -21,7 +21,7 @@ class UsersLoader extends Component {
 
     getUsers({
       page: currentPage,
-      results: 5,
+      results: 6,
     })
       .then((data) => this.setState({ users: data.results }))
       .catch((e) => this.setState({ error: e }))
