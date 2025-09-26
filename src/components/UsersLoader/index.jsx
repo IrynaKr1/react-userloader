@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import getUsers from './api/index.js';
 import UsersListItem from './UsersListItem';
+import styles from './UserCards.module.scss';
 
 class UsersLoader extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class UsersLoader extends Component {
         {error && <div>!!!Error!!!</div>}
         {isFetching && <div>Loading, please wait!</div>}
         {!error && !isFetching && (
-          <ul>{users.map(this.mapUser)}</ul>
+          <ul className={styles.userList}>{users.map(this.mapUser)}</ul>
         )}
       </>
     );

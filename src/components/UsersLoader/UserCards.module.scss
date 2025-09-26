@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 150px;
+  background-color: aliceblue;
+}
+
+.userList {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 15px;
+}
