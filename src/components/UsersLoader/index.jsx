@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import getUsers from './api/index.js';
 import UsersListItem from './UsersListItem';
+import '../../reset.css';
 import styles from './UserCards.module.scss';
 
 class UsersLoader extends Component {
