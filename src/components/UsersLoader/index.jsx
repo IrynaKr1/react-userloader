@@ -13,6 +13,7 @@ class UsersLoader extends Component {
       isFetching: false,
       error: null,
       currentPage: 1,
+      genderFilter: 'all'
     };
   }
 
@@ -62,6 +63,9 @@ class UsersLoader extends Component {
       <>
         <button onClick={this.prevPage}>{'<'}</button>
         <button onClick={this.nextPage}>{'>'}</button>
+        <button>All</button>
+        <button>Male</button>
+        <button>Female</button>
         {error && <div>!!!Error!!!</div>}
         {isFetching && <div>Loading, please wait!</div>}
         {!error && !isFetching && (

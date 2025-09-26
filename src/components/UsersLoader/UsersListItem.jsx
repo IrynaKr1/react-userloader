@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../reset.css';
 import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import styles from './UsersLoader.module.scss';
