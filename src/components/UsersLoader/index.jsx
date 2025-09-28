@@ -13,7 +13,7 @@ class UsersLoader extends Component {
       isFetching: false,
       error: null,
       currentPage: 1,
-      genderFilter: 'all'
+      genderFilter: 'all',
     };
   }
 
@@ -46,30 +46,46 @@ class UsersLoader extends Component {
     }
   };
 
+  setGenderFilter = (gender) => {
+    this.setState({
+      genderFilter: gender,
+      currentPage: 1,
+    });
+  };
+
   componentDidUpdate(prevProps, prevState) {
-    const { currentPage } = this.state;
-    if (currentPage != prevState.currentPage) {
+    const { currentPage, genderFilter } = this.state;
+    if (currentPage != prevState.currentPage || genderFilter !== prevState.genderFilter)  {
       this.loadUsers();
     }
   }
+
+  getFilteredUsers = () => {
+    const { users, genderFilter } = this.state;
+    if (genderFilter === 'all') {
+      return users;
+    }
+    return users.filter((user) => user.gender === genderFilter);
+  };
 
   mapUser = (u) => {
     return <UsersListItem key={u.login.uuid} user={u} />;
   };
 
   render() {
-    const { users, isFetching, error } = this.state;
+    const {isFetching, error, genderFilter } = this.state;
+    const filteredUsers = this.getFilteredUsers();
     return (
       <>
         <button onClick={this.prevPage}>{'<'}</button>
         <button onClick={this.nextPage}>{'>'}</button>
-        <button>All</button>
-        <button>Male</button>
-        <button>Female</button>
+        <button onClick={() => this.setGenderFilter('all')}>All</button>
+        <button onClick={() => this.setGenderFilter('male')}>Male</button>
+        <button onClick={() => this.setGenderFilter('female')}>Female</button>
         {error && <div>!!!Error!!!</div>}
         {isFetching && <div>Loading, please wait!</div>}
         {!error && !isFetching && (
-          <ul className={styles.userList}>{users.map(this.mapUser)}</ul>
+          <ul className={styles.userList}>{filteredUsers.map(this.mapUser)}</ul>
         )}
       </>
     );
