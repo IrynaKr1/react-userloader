@@ -1,13 +1,14 @@
 import '../../reset.css';
 import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import styles from './UsersLoader.module.scss';
+import getFlagEmoji from './flagUtils.js';
 
 function UsersListItem(props) {
   const { user } = props;
   const {
     name: { first, last },
     picture: { medium },
-    login: { uuid, username },
+    login: { username },
     cell,
     email,
     location: {
@@ -16,8 +17,10 @@ function UsersListItem(props) {
       state,
       country,
     },
+    nat,
   } = user;
 
+  const flagEmoji = getFlagEmoji(nat);
   return (
     <li>
       <div className={styles.container}>
@@ -45,6 +48,7 @@ function UsersListItem(props) {
             <div className={styles.qrPlaceholder}></div>
           </div>
           <div className={styles.contactInfo}>
+            <span>{flagEmoji}</span>
             <p className={styles.country}>{country}</p>
           </div>
           <div className={styles.contactInfo}>

@@ -55,7 +55,10 @@ class UsersLoader extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { currentPage, genderFilter } = this.state;
-    if (currentPage != prevState.currentPage || genderFilter !== prevState.genderFilter)  {
+    if (
+      currentPage != prevState.currentPage ||
+      genderFilter !== prevState.genderFilter
+    ) {
       this.loadUsers();
     }
   }
@@ -73,7 +76,7 @@ class UsersLoader extends Component {
   };
 
   render() {
-    const {isFetching, error, genderFilter } = this.state;
+    const { isFetching, error } = this.state;
     const filteredUsers = this.getFilteredUsers();
     return (
       <>
