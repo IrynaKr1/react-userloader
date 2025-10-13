@@ -45,7 +45,9 @@ function UsersListItem(props) {
                 <p className={styles.userEmail}>{email}</p>
               </div>
             </div>
-            <div className={styles.qrPlaceholder}></div>
+            <div className={styles.qrPlaceholder}>
+              <img src='/src/assets/qrCode.png' alt="qr code" />
+            </div>
           </div>
           <div className={styles.contactInfo}>
             <span>{flagEmoji}</span>
