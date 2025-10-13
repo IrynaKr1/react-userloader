@@ -26,7 +26,11 @@ function UsersListItem(props) {
       <div className={styles.container}>
         <div className={styles.mainUserData}>
           <div className={styles.imageContainer}>
-            <img src={medium} alt={`${first} ${last}`} />
+            <img
+              src={medium}
+              alt={`${first} ${last}`}
+              className={styles.mainImage}
+            />
           </div>
           <h2 className={styles.userName}>
             {first} {last}
@@ -46,17 +50,23 @@ function UsersListItem(props) {
               </div>
             </div>
             <div className={styles.qrPlaceholder}>
-              <img src='/src/assets/qrCode.png' alt="qr code" />
+              <img
+                src='/src/assets/qrCode.png'
+                alt='qr code'
+                className={styles.qrImg}
+              />
             </div>
           </div>
           <div className={styles.contactInfo}>
             <span>{flagEmoji}</span>
-            <p className={styles.country}>{country}</p>
+            <p className={`${styles.country} ${styles.contactInfoP}`}>
+              {country}
+            </p>
           </div>
           <div className={styles.contactInfo}>
             <FiMapPin className={styles.icon} />
             <p
-              className={styles.address}
+              className={`${styles.address} ${styles.contactInfoP}`}
             >{`${number} ${name}, ${city}, ${state}`}</p>
           </div>
         </div>
