@@ -41,11 +41,11 @@ function UsersListItem(props) {
           <div className={styles.phoneAndEmail}>
             <div className={styles.contactInfo}>
               <FiPhone className={styles.icon} />
-              <p className={styles.phone}>{cell}</p>
+              <p className={styles.contactInfoP}>{cell}</p>
             </div>
             <div className={styles.contactInfo}>
               <FiMail className={styles.icon} />
-              <p className={styles.userEmail}>{email}</p>
+              <p className={styles.contactInfoP}>{email}</p>
             </div>
           </div>
           <div className={styles.qrPlaceholder}>
