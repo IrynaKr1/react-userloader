@@ -105,8 +105,9 @@ $secondary-color: #232a61;
   display: flex;
   align-items: flex-start;
   gap: 3px;
+}
 
-  .contactInfoP {
+.contactInfoP {
     word-wrap: break-all;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -115,7 +116,6 @@ $secondary-color: #232a61;
     flex: 1;
     min-width: 0;
   }
-}
 
 .icon {
   width: 16px;
